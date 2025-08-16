@@ -1,6 +1,6 @@
 <?php
 
-namespace erfan\LaravelCollectiveSpatieHtmlParser;
+namespace eru\LaravelCollectiveSpatieHtmlParser;
 
 use Illuminate\Support\Facades\Facade;
 
