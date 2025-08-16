@@ -1,6 +1,6 @@
 <?php
 
-namespace erfan\LaravelCollectiveSpatieHtmlParser\Traits;
+namespace eru\LaravelCollectiveSpatieHtmlParser\Traits;
 
 trait AttributesUtils
 {

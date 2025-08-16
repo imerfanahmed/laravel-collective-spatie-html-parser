@@ -1,8 +1,8 @@
 <?php
 
-namespace erfan\LaravelCollectiveSpatieHtmlParser;
+namespace eru\LaravelCollectiveSpatieHtmlParser;
 
-use erfan\LaravelCollectiveSpatieHtmlParser\Traits\AttributesUtils;
+use eru\LaravelCollectiveSpatieHtmlParser\Traits\AttributesUtils;
 
 class FormAdapter
 {

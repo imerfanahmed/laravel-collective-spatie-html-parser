@@ -1,5 +1,5 @@
 {
-    "name": "erfan/laravel-collective-spatie-html-parser",
+    "name": "eru/laravel-collective-spatie-html-parser",
     "description": "Adapter class that allows use spatie/laravel-html for old projects that were using the abanondated laravelcollective/html package, and allow to update to new versions of laravel",
     "type": "library",
     "require": {
@@ -10,23 +10,23 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "erfan\\LaravelCollectiveSpatieHtmlParser\\": "src/"
+            "eru\\LaravelCollectiveSpatieHtmlParser\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "erfan\\LaravelCollectiveSpatieHtmlParser\\ServiceProvider"
+                "eru\\LaravelCollectiveSpatieHtmlParser\\ServiceProvider"
             ],
             "aliases": {
-                "Form": "erfan\\LaravelCollectiveSpatieHtmlParser\\FormFacade"
+                "Form": "eru\\LaravelCollectiveSpatieHtmlParser\\FormFacade"
             }
         }
     },
     "authors": [
         {
             "name": "Christian Albán",
-            "email": "christianerfanctdb1d@gmail.com"
+            "email": "christianeructdb1d@gmail.com"
         }
     ],
 
