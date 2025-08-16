@@ -1,6 +1,6 @@
 <?php
 
-namespace Alban\LaravelCollectiveSpatieHtmlParser;
+namespace erfan\LaravelCollectiveSpatieHtmlParser;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 

@@ -43,7 +43,7 @@ The following methods can be used and are located in the `src/FormAdapter` direc
 To install the package, use composer:
 
 ```sh
-composer require alban/laravel-collective-spatie-html-parser
+composer require erfan/laravel-collective-spatie-html-parser
 ```
 
 ## Usage
