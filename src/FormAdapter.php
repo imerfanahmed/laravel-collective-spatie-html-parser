@@ -15,30 +15,35 @@ class FormAdapter
         return $this->mergeOptions($element, $options);
     }
 
-    public function open(array $options = [])
-    {
-        $method = array_key_exists('method', $options) ? $options['method'] : 'POST';
-        $route = array_key_exists('route', $options) ? $options['route'] : '';
-        $files = array_key_exists('files', $options) ? $options['files'] : false;
+public function open( array $options = [] ) {
+        $method = $options['method'] ?? 'POST';
+        $route  = $options['route'] ?? null;
+        $files  = $options['files'] ?? false;
+        $url    = $options['url'] ?? null; // treat like an explicit action
 
-        unset($options['method'], $options['route'], $options['files']);
+        unset( $options['method'], $options['route'], $options['files'], $options['url'] );
 
         $form = html();
 
-        if (is_array($route) && count($route)) {
-            $action = array_shift($route);
-            $form = $form->form($method, route($action, $route));
-        } elseif ($route != null && $route != [] && $route != '') {
-            $form = $form->form($method, route($route));
+        // Determine action
+        if ( is_array( $route ) && ! empty( $route ) ) {
+            $routeName = array_shift( $route );
+            $action    = route( $routeName, $route );
+        } elseif ( ! empty( $route ) ) {
+            $action = route( $route );
+        } elseif ( ! empty( $url ) ) {
+            $action = $url;
         } else {
-            $form = $form->form($method);
+            $action = null;
         }
 
-        if ($files) {
+        $form = $action ? $form->form( $method, $action ) : $form->form( $method );
+
+        if ( $files ) {
             $form = $form->acceptsFiles();
         }
 
-        return $this->mergeOptions($form, $options)->open();
+        return $this->mergeOptions( $form, $options )->open();
     }
 
     public function label($name, $value = null, $options = [], $escape_html = true)
